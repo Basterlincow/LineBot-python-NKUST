@@ -32,14 +32,19 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def pretty_echo(event):
-    
+    text = event.message.text
     if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
-  
+        
+        if text == 'test':
+            text='success'
+        else
+            text=text    
+
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=event.message.text)
+            TextSendMessage(text=text)
         )
-        
+
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
