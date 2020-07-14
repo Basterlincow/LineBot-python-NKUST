@@ -34,11 +34,12 @@ def callback():
 def pretty_echo(event):
     
     if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
-        
+  
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=TextMessage)
+            TextSendMessage(text=event.message.text)
         )
+        
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
