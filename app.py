@@ -34,10 +34,10 @@ def callback():
 def pretty_echo(event):
     text = event.message.text
     if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
-        
+
         if text == 'test':
             text='success'
-        else
+        else:
             text=text    
 
         line_bot_api.reply_message(
