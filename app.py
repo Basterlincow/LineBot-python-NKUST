@@ -7,7 +7,6 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import *
-import random
 app = Flask(__name__)
 # Channel Access Token
 line_bot_api = LineBotApi('vF5ttR4VfzPsvyWeIDiaZzq0rtMBJdIF8nSyk+Xme1d5NRAL28/kXw+vpwQR1Q+J1CGg9KtsYjeT+TC5V3CCfeasOSG1W0OkYKoO9rKAsTyQZH+6gikAUiSn3YhjW8VNwGDFCN/q6cHIHaqym3qGcwdB04t89/1O/w1cDnyilFU=')
@@ -36,18 +35,9 @@ def pretty_echo(event):
     
     if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
         
-        # Phoebe 愛唱歌
-        pretty_note = '♫♪♬'
-        pretty_text = ''
-        
-        for i in event.message.text:
-        
-            pretty_text += i
-            pretty_text += random.choice(pretty_note)
-    
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=pretty_text)
+            TextSendMessage(text=TextMessage)
         )
 import os
 if __name__ == "__main__":
